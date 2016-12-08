@@ -5,11 +5,21 @@
  * @param  {Number} maxFibValue
  * @return {Number} sum
  */
-function _sumFibs( maxFibValue ) {
+
+function _sumFibs(maxFibValue) {
   var sum = 0;
+  var fibNum = [1, 2];
+  var currentFib = 0;
+  var i = 0;
 
-  // do your work here
-
+while(currentFib < maxFibValue){
+  currentFib = fibNum[i] + fibNum[i + 1];
+  fibNum.push(currentFib);
+  i++;
+  if(fibNum[i] % 2 === 0){
+    sum += fibNum[i];
+  }
+}
   return sum;
 }
 
